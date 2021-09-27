@@ -1,3 +1,11 @@
+package com.springframework5.home.model;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToMany;
+import lombok.Data;
+import java.util.ArrayList;
+
 @Entity
 @Data
 public class Author{
@@ -20,7 +28,7 @@ public class Author{
 	
 	@Override
 	public int hashCode() {
-		return id.hashCode() != null id.hashCode():0;
+		return id.hashCode() != 0? id.hashCode():0;
 	}
 	
 }
