@@ -1,14 +1,16 @@
 package com.springframework5.home.model;
 
 
-import lombok.Data;
+import lombok.*;
 
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Book {
     @Id
@@ -20,4 +22,8 @@ public class Book {
     inverseJoinColumns = @JoinColumn(name = "author_id")
     )
     private Set<Author> authors = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Publisher publisher;
+
 }

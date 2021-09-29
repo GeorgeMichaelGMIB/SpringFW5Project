@@ -1,23 +1,26 @@
 package com.springframework5.home.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
-public class Author {
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @ManyToMany(mappedBy = "authors")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "publisher_id")
     private Set<Book> books = new HashSet<>();
-
 }
