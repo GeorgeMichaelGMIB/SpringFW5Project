@@ -1,0 +1,6 @@
+SOLID principle:
+1-Single task/responsibility principle
+2-Open for extendability closed for modification
+3-Liskov substitution principle(Extend in a good way).
+4-Interface segregation principle(Interface should simple)
+5-Dependency inversion principle(abstraction dependency)
